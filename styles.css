@@ -57,8 +57,25 @@ body {
 
 .shape-3 {
     bottom: 15%;
-    left: 20%;
+    left: 12%;
     animation-delay: 10s;
+}
+.shape-4 {
+    top: 25%;
+    right: 20%;
+    animation-delay: 3s;
+}
+
+.shape-5 {
+    bottom: 40%;
+    left: 15%;
+    animation-delay: 7s;
+}
+
+.shape-6 {
+    top: 85%;
+    left: 50%;
+    animation-delay: 12s;
 }
 
 @keyframes float {
