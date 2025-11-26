@@ -15,29 +15,29 @@ const defaultConfig = {
 
 const productData = {
     pumps: [
-        { icon: "💧", name: "Centrifugal Pumps", description: "High-efficiency water and liquid transfer" },
-        { icon: "⚡", name: "Submersible Pumps", description: "Deep well and borehole applications" },
-        { icon: "🔄", name: "Multistage Pumps", description: "High-pressure delivery systems" },
-        { icon: "🌊", name: "Wastewater Pumps", description: "Heavy-duty sewage handling" },
-        { icon: "🏭", name: "Process Pumps", description: "Industrial applications" },
-        { icon: "🔥", name: "Hot Water Pumps", description: "High-temperature circulation" },
-        { icon: "⚙️", name: "Booster Pumps", description: "Pressure enhancement systems" }
+        { icon: "💧", name: "Centrifugal Pumps", description: "Efficient liquid transfer for general applications" },
+        { icon: "⚡", name: "Submersible Pumps", description: "Reliable pumping for deep wells and boreholes" },
+        { icon: "🔄", name: "Multistage Pumps", description: "High-pressure delivery for demanding systems" },
+        { icon: "🌊", name: "Wastewater Pumps", description: "Robust design for sewage and sludge handling" },
+        { icon: "🏭", name: "Process Pumps", description: "Specialized solutions for industrial processes" },
+        { icon: "🔥", name: "Hot Water Pumps", description: "Safe circulation for high-temperature fluids" },
+        { icon: "⚙️", name: "Booster systems", description: "Pressure enhancement for consistent flow" }
     ],
     valves: [
-        { icon: "🎚️", name: "Control Valves", description: "Precise flow regulation" },
-        { icon: "🔒", name: "Shut-off Valves", description: "Complete flow isolation" },
-        { icon: "✔️", name: "Check Valves", description: "Backflow prevention" },
-        { icon: "🔧", name: "Ball Valves", description: "Quick quarter-turn operation" },
-        { icon: "🦋", name: "Butterfly Valves", description: "Large diameter applications" },
-        { icon: "🚪", name: "Gate Valves", description: "Full bore flow control" },
-        { icon: "🌡️", name: "Temperature Control", description: "Thermal regulation valves" },
-        { icon: "💨", name: "Pressure Relief", description: "Safety and overpressure protection" },
-        { icon: "❄️", name: "Cryogenic Valves", description: "Low-temperature fluid handling" },
-        { icon: "🌐", name: "Globe Valves", description: "Low-temperature fluid handling" }
+        { icon: "🎚️", name: "Control Valves", description: "Precision flow regulation for process control" },
+        { icon: "🔒", name: "Shut-off Valves", description: "Complete isolation for safety and maintenance" },
+        { icon: "✔️", name: "Check Valves", description: "Prevents reverse flow to protect equipment" },
+        { icon: "🔧", name: "Ball Valves", description: "Quick quarter-turn operation for reliable shut-off" },
+        { icon: "🦋", name: "Butterfly Valves", description: "Compact solution for large-diameter flow control" },
+        { icon: "🚪", name: "Gate Valves", description: "Full bore design for unrestricted flow" },
+        { icon: "🌡️", name: "Temperature Control", description: "Maintains thermal stability in critical systems" },
+        { icon: "💨", name: "Pressure Relief", description: "Protects systems from overpressure conditions" },
+        { icon: "❄️", name: "Cryogenic Valves", description: "Handles extremely low-temperature fluids safely" },
+        { icon: "🌐", name: "Globe Valves", description: "Precise throttling for accurate flow control" }
     ],
     automation: [
         { icon: "📱", name: "Level Control", description: "Electronic unit for monitoring and controlling liquid levels in tanks or systems" },
-        { icon: "📈", name: "Pump Drive", description: "Variable frequency drive for precise pump speed control and energy optimization" },
+        { icon: "🎛️", name: "Pump Drive", description: "Variable frequency drive for precise pump speed control and energy optimization" },
         { icon: "📟", name: "Pump Meter", description: "Flow and pressure measurement device for pump performance monitoring" },
     ],
     valveAutomation: [
@@ -49,6 +49,13 @@ const productData = {
         { icon: "🔌", name: "Electric Valve Actuator", description: "Motor-driven actuator for precise valve positioning and remote control" },
         { icon: "🌪️", name: "Pneumatic Valve Actuator", description: "Compressed air-powered actuator for fast and reliable valve operation" },
         { icon: "🔨", name: "Manual  Valve Actuator", description: "Hand-operated mechanism for simple and cost-effective valve control" },
+    ],
+    supportingTools:[
+         { icon: "📛", name: "Nameplate Generator", description: "Tool that helps create precise, customized nameplates with technical specs, model numbers, serial details, and other key information. It enables users to design and print nameplates using laser engraving or adhesive labels" },
+         { icon: "📊", name: "MasterData Downloader", description: "It is a replication tool that fetches motor and pricing data from SAP and updates the Easy Select database. It reduces replication time, offers clear error messages, and provides a user-friendly interface with a progress bar and history tracking" },
+         { icon: "⌚", name: "Develivery Time Tool", description: "Delivery Time Tool is used by product managers to update manufacturing time, quantity, and dates in the database. It supports bulk updates through Excel import/export and includes a logging tab to track all changes. With multiple filters, sorting and managing data becomes quick and easy" },
+         { icon: "🦾", name: "EasySelect Deployment Tool", description: "Tool is a specialized software used for EasySelect Qual deployment, including KIF and database deployment. It is fully automated, enabling seamless and effortless end-to-end deployment" },
+         { icon: "ℹ️", name: "EasySelect Database Update Tool", description: "Tool is a utility designed to update and manage EasySelect application data directly in the database. It automates data updates to ensure accuracy, consistency, and faster maintenance" }
     ]
 }
 
@@ -62,8 +69,9 @@ function openModal(category) {
         pumps: '⚙️ Pump And System Products',
         valves: '🔧 Valve Products',
         automation: '🤖 Automation Solutions',
-        valveAutomation: '🖥️ Valve Automations',
-        valveActuators: '🛠️ Valve Actuators'
+        valveAutomation: '🖥️ Valve Automations Solutions',
+        valveActuators: '⚓ Valve Actuators',
+        supportingTools: '🛠️ Supporting Tools'
     };
     
     modalTitle.textContent = titles[category];
@@ -106,7 +114,6 @@ window.onclick = function(event) {
     }
 }
 
-// Add fadeInUp animation
 const style = document.createElement('style');
 style.textContent = `
     @keyframes fadeInUp {
@@ -122,20 +129,16 @@ style.textContent = `
 `;
 document.head.appendChild(style);
 
-// Apply configuration changes (styles only, preserve HTML content)
 function applyConfig(config) {
     const container = document.querySelector('.celebration-container');
     const customFont = config.font_family || defaultConfig.font_family;
     const baseFontStack = '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
 
-    // Apply font family
     document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
 
-    // Apply background gradient
     const gradient = `linear-gradient(135deg, ${config.background_color || defaultConfig.background_color} 0%, ${config.secondary_action_color || defaultConfig.secondary_action_color} 100%)`;
     container.style.background = gradient;
 
-    // Apply surface colors
     const descBox = document.querySelector('.description-box');
     descBox.style.background = config.surface_color || defaultConfig.surface_color;
 
@@ -144,14 +147,13 @@ function applyConfig(config) {
         card.style.background = config.surface_color || defaultConfig.surface_color;
     });
 
-    // Apply colors only (font sizes come from CSS)
     const mainTitle = document.getElementById('main-title');
     mainTitle.style.color = config.text_color || defaultConfig.text_color;
 
     // Apply button gradient only (font size comes from CSS)
-    const ctaButton = document.getElementById('cta-button');
-    const buttonGradient = `linear-gradient(135deg, ${config.primary_action_color || defaultConfig.primary_action_color}, ${config.secondary_action_color || defaultConfig.secondary_action_color})`;
-    ctaButton.style.background = buttonGradient;
+    // const ctaButton = document.getElementById('cta-button');
+    // const buttonGradient = `linear-gradient(135deg, ${config.primary_action_color || defaultConfig.primary_action_color}, ${config.secondary_action_color || defaultConfig.secondary_action_color})`;
+    // ctaButton.style.background = buttonGradient;
 }
 
 // Create confetti animation
@@ -176,19 +178,18 @@ function createConfetti() {
     }
 }
 
-// Add click event to CTA button
+
 document.addEventListener('DOMContentLoaded', () => {
-    const ctaButton = document.getElementById('cta-button');
+    // const ctaButton = document.getElementById('cta-button');
     
-    ctaButton.addEventListener('click', () => {
-        alert('Welcome to EasySelect 25th Release! 🎉');
-    });
+    // ctaButton.addEventListener('click', () => {
+    //     alert('Welcome to EasySelect 25th Release! 🎉');
+    // });
 
     // Initialize confetti
     createConfetti();
     setInterval(createConfetti, 8000);
 
-    // Apply styling (colors, fonts, backgrounds) but preserve HTML content
     applyConfig(defaultConfig);
 });
 

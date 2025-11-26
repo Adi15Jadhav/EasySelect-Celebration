@@ -58,11 +58,12 @@ body {
 .shape-3 {
     bottom: 15%;
     left: 12%;
-    animation-delay: 10s;
+    animation-delay: 5s;
 }
+
 .shape-4 {
     top: 25%;
-    right: 15%;
+    right: 20%;
     animation-delay: 3s;
 }
 
@@ -74,8 +75,32 @@ body {
 
 .shape-6 {
     top: 85%;
-    right: 20%;
+    left: 70%;
     animation-delay: 12s;
+}
+
+.shape-7 {
+    top: 35%;
+    left: 5%;
+    animation-delay: 2s;
+}
+
+.shape-8 {
+    bottom: 20%;
+    right: 10%;
+    animation-delay: 8s;
+}
+
+.shape-9 {
+    top: 5%;
+    right: 5%;
+    animation-delay: 4s;
+}
+
+.shape-10 {
+    bottom: 50%;
+    right: 10%;
+    animation-delay: 8s;
 }
 
 @keyframes float {
@@ -172,12 +197,6 @@ body {
     background-size: 200% 200%;
 }
 
-.pump-icon {
-    width: 100%;
-    height: 6rem;
-    object-fit: contain;
-}
-
 @keyframes shimmer {
     0% {
         background-position: 0% 50%;
@@ -230,9 +249,24 @@ body {
 
 .features-grid-2 {
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
     margin-bottom: 3rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.pump-icon {
+    width: 64px;
+    height: 64px;
+    object-fit: contain;
+    filter: brightness(1.2);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover .pump-icon {
+    transform: scale(1.1);
 }
 
 .feature-card {
@@ -242,12 +276,45 @@ body {
     border-radius: 16px;
     padding: 2rem;
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* .feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.2), transparent);
+    transition: left 0.5s ease;
+} */
+
+.feature-card:hover::before {
+    left: 100%;
 }
 
 .feature-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 50px rgba(59, 130, 246, 0.4);
+    border-color: rgba(59, 130, 246, 0.5);
+}
+
+.card-hover-hint {
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: #60a5fa;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.feature-card:hover .card-hover-hint {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .feature-icon {
@@ -336,50 +403,7 @@ body {
     line-height: 1.6;
 }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-    .milestone-number {
-        font-size: 5rem;
-    }
 
-    .main-title {
-        font-size: 2.25rem;
-    }
-
-    .subtitle {
-        font-size: 1.125rem;
-    }
-
-    .description-text {
-        font-size: 1rem;
-    }
-
-    .features-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .features-grid-2 {
-        grid-template-columns: 1fr;
-    }
-
-    .ksb-logo {
-        max-width: 300px;
-    }
-
-    .badge-icon {
-        font-size: 2rem;
-    }
-
-    .badge-text {
-        font-size: 1.125rem;
-    }
-
-    .anniversary-badge {
-        padding: 0.875rem 2rem;
-    }
-}
-
-/* Modal Styles */
 .modal {
     display: none;
     position: fixed;
@@ -388,7 +412,7 @@ body {
     top: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(54, 79, 90, 0.8);
+    background-color: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(5px);
     animation: fadeIn 0.3s ease;
 }
@@ -517,4 +541,230 @@ body {
     font-size: 0.9rem;
     color: #94a3b8;
     line-height: 1.5;
+}
+
+
+
+@media (max-width: 768px) {
+    .celebration-container {
+        padding: 2rem 1rem;
+    }
+
+    .milestone-number {
+        font-size: 5rem;
+    }
+
+    .main-title {
+        font-size: 2.25rem;
+    }
+
+    .subtitle {
+        font-size: 1.125rem;
+    }
+
+    .description-text {
+        font-size: 1rem;
+        padding: 0 0.5rem;
+    }
+
+    .features-grid,
+    .features-grid-2 {
+        grid-template-columns: 1fr;
+    }
+
+    .ksb-logo {
+        max-width: 300px;
+    }
+
+    .badge-icon {
+        font-size: 2rem;
+    }
+
+    .badge-text {
+        font-size: 1.125rem;
+    }
+
+    .anniversary-badge {
+        padding: 0.875rem 2rem;
+    }
+
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+        padding: 0;
+    }
+
+    .modal-header {
+        padding: 1.25rem 1.5rem;
+    }
+
+    .modal-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .modal-body {
+        padding: 1.5rem;
+    }
+
+    .product-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .product-item {
+        padding: 1rem;
+    }
+
+
+    .shape {
+        opacity: 0.08;
+    }
+
+    .shape-1 {
+        top: 5%;
+        left: 5%;
+        width: 60px;
+        height: 60px;
+    }
+
+    .shape-2 {
+        top: 50%;
+        right: 5%;
+        width: 70px;
+        height: 70px;
+    }
+
+    .shape-3 {
+        bottom: 10%;
+        left: 10%;
+        width: 55px;
+        height: 55px;
+    }
+
+    .shape-4 {
+        top: 20%;
+        right: 10%;
+        width: 65px;
+        height: 65px;
+    }
+
+    .shape-5 {
+        bottom: 30%;
+        left: 5%;
+        width: 60px;
+        height: 60px;
+    }
+
+    .shape-6 {
+        top: 70%;
+        left: 40%;
+        width: 75px;
+        height: 75px;
+    }
+
+    .shape-7 {
+        top: 35%;
+        left: 3%;
+        width: 50px;
+        height: 50px;
+    }
+
+    .shape-8 {
+        bottom: 15%;
+        right: 8%;
+        width: 60px;
+        height: 60px;
+    }
+
+    .shape-9 {
+        top: 8%;
+        right: 3%;
+        width: 65px;
+        height: 65px;
+    }
+
+    .shape-10 {
+        bottom: 45%;
+        right: 25%;
+        width: 55px;
+        height: 55px;
+    }
+}
+
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .celebration-container {
+        padding: 2.5rem 1.5rem;
+    }
+
+    .milestone-number {
+        font-size: 6.5rem;
+    }
+
+    .main-title {
+        font-size: 3rem;
+    }
+
+    .subtitle {
+        font-size: 1.35rem;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .features-grid-2 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .ksb-logo {
+        max-width: 350px;
+    }
+
+    /* Tablet shape adjustments */
+    .shape {
+        opacity: 0.09;
+    }
+
+    .shape-1,
+    .shape-2,
+    .shape-3,
+    .shape-4,
+    .shape-5,
+    .shape-6 {
+        width: 80px;
+        height: 80px;
+    }
+
+    .shape-7,
+    .shape-8,
+    .shape-9,
+    .shape-10 {
+        width: 70px;
+        height: 70px;
+    }
+}
+
+/* Large screens - enhance visibility */
+@media (min-width: 1400px) {
+    .shape {
+        opacity: 0.12;
+    }
+
+    .shape-1,
+    .shape-2,
+    .shape-3,
+    .shape-4,
+    .shape-5,
+    .shape-6 {
+        width: 140px;
+        height: 140px;
+    }
+
+    .shape-7,
+    .shape-8,
+    .shape-9,
+    .shape-10 {
+        width: 120px;
+        height: 120px;
+    }
 }
