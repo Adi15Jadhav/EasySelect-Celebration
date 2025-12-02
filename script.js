@@ -9,7 +9,7 @@ const defaultConfig = {
     subtitle: "25th Iterations of Software Excellence.",
     description: "For 25 releases, EasySelect has been the trusted solution for pump, valve, and automation systems configurations.This milestone celebrates our commitment to innovation, precision, and empowering engineers worldwide to select with confidence.",
     cta_button_text: "Explore More",
-    font_family: "Inter",
+    font_family: "Helvetica Neue",
     font_size: 16
 };
 
@@ -131,10 +131,6 @@ document.head.appendChild(style);
 
 function applyConfig(config) {
     const container = document.querySelector('.celebration-container');
-    const customFont = config.font_family || defaultConfig.font_family;
-    const baseFontStack = '-apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif';
-
-    document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
 
     const gradient = `linear-gradient(135deg, ${config.background_color || defaultConfig.background_color} 0%, ${config.secondary_action_color || defaultConfig.secondary_action_color} 100%)`;
     container.style.background = gradient;
@@ -150,10 +146,6 @@ function applyConfig(config) {
     const mainTitle = document.getElementById('main-title');
     mainTitle.style.color = config.text_color || defaultConfig.text_color;
 
-    // Apply button gradient only (font size comes from CSS)
-    // const ctaButton = document.getElementById('cta-button');
-    // const buttonGradient = `linear-gradient(135deg, ${config.primary_action_color || defaultConfig.primary_action_color}, ${config.secondary_action_color || defaultConfig.secondary_action_color})`;
-    // ctaButton.style.background = buttonGradient;
 }
 
 // Create confetti animation

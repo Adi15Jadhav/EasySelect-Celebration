@@ -11,7 +11,7 @@ body {
 }
 
 body {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-family: "Arimo", Arial, sans-serif;;
     overflow-x: hidden;
 }
 
@@ -169,11 +169,11 @@ body {
 }
 
 .badge-icon {
-    font-size: 2.25rem;
+    font-size: 2.00rem;
 }
 
 .badge-text {
-    font-size: 1.25rem;
+    font-size: 2.25rem;
     font-weight: 500;
     color: #ffffff;
     letter-spacing: 0.05em;
@@ -185,15 +185,15 @@ body {
 }
 
 .milestone-number {
-    font-size: 7rem;
+    font-size: 6rem;
     font-weight: 900;
-    background: linear-gradient(135deg, #3b82f6, #8b5cf6, #ec4899);
+    background: linear-gradient(135deg, #11ffb8, #df37f5, #1bdbf5);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
     line-height: 1;
     margin-bottom: 1rem;
-    animation: shimmer 3s infinite linear;
+    animation: shimmer 5s infinite linear;
     background-size: 200% 200%;
 }
 
@@ -210,7 +210,7 @@ body {
 }
 
 .main-title {
-    font-size: 3.25rem;
+    font-size: 3.5rem;
     font-weight: 800;
     color: #ffffff;
     margin-bottom: 1rem;
@@ -218,7 +218,7 @@ body {
 }
 
 .subtitle {
-    font-size: 1.25rem;
+    font-size: 2.0rem;
     color: #94a3b8;
     font-weight: 400;
     margin-bottom: 2rem;
@@ -282,16 +282,6 @@ body {
     overflow: hidden;
 }
 
-/* .feature-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(59, 130, 246, 0.2), transparent);
-    transition: left 0.5s ease;
-} */
 
 .feature-card:hover::before {
     left: 100%;
@@ -324,14 +314,14 @@ body {
 
 .feature-title {
     font-size: 1.25rem;
-    font-weight: 600;
+    font-weight: 800;
     color: #ffffff;
     margin-bottom: 0.5rem;
 }
 
 .feature-description {
-    font-size: 0.95rem;
-    color: #94a3b8;
+    font-size: 1.0rem;
+    color: #c2c9d3;
     line-height: 1.6;
 }
 
